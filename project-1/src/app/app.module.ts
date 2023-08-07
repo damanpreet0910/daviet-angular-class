@@ -12,6 +12,9 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { ManageCategoryComponent } from './category/manage-category/manage-category.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PersonalInfoComponent } from './portfolio/personal-info/personal-info.component';
+import { EducationalQualificationComponent } from './portfolio/educational-qualification/educational-qualification.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ManageCategoryComponent } from './category/manage-category/manage-categ
     HeaderComponent,
     FooterComponent,
     AddCategoryComponent,
-    ManageCategoryComponent
+    ManageCategoryComponent,
+    PortfolioComponent,
+    PersonalInfoComponent,
+    EducationalQualificationComponent
   ],
   imports: [
     BrowserModule,

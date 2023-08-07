@@ -7,6 +7,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LayoutComponent } from './layout/layout.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { ManageCategoryComponent } from './category/manage-category/manage-category.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PersonalInfoComponent } from './portfolio/personal-info/personal-info.component';
+import { EducationalQualificationComponent } from './portfolio/educational-qualification/educational-qualification.component';
 
 const routes: Routes = [
   {
@@ -31,6 +34,17 @@ const routes: Routes = [
         path:'manage-category',component:ManageCategoryComponent
       }
     ]    
+  },
+  {
+    path:'portfolio',component:PortfolioComponent,
+    children:[
+      {
+        path:'personal-info',component:PersonalInfoComponent
+      },
+      {
+        path:'edu',component:EducationalQualificationComponent
+      }
+    ]
   },
   {
     path:'**',component:PageNotFoundComponent
