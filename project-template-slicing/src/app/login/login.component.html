@@ -1,0 +1,27 @@
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg overlay2">
+    <h3>Login</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!-- about_area_start -->
+<div class="about_area">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 mx-auto">
+            <form [formGroup]="loginform" (submit)="submit()">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" formControlName="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" formControlName="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="loginform.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- about_area_end -->
