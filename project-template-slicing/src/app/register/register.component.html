@@ -1,1 +1,31 @@
-<p>register works!</p>
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg overlay2">
+    <h3>Register</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!-- our_team_member_start -->
+<div class="our_team_member">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-md-6 col-lg-3 mx-auto">
+            <form (ngForm)="registerform" (ngSubmit)="reg()">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" name="name" #name [(ngModel)]="registerform.name" required="">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" name="email" #email [(ngModel)]="registerform.email" required="">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" class="form-control" name="password" #password [(ngModel)]="registerform.password" required="">
+                </div>
+                <button type="submit" class="btn btn-primary mx-auto d-block" [disabled]="(!registerform.email) || (!registerform.name) || (!registerform.password)">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- our_team_member_end -->
