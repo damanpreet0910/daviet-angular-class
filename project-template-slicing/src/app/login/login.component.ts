@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit{
     password: new FormControl('',[Validators.required,Validators.minLength(5)]),
   })
 
-  constructor(private router : Router){}
+  constructor(private router : Router,private authservice : AuthService){}
 
   ngOnInit(): void {
     
@@ -22,9 +23,10 @@ export class LoginComponent implements OnInit{
 
   submit(){
     // console.log(this.loginform.value)
-    if(this.loginform.value.email == "daman@gmail.com" && this.loginform.value.password == "123")
+    if(this.loginform.value.email == "daman@gmail.com" && this.loginform.value.password == "123456")
     {
       alert("Login Successfully")
+      this.authservice.setdata(this.loginform.value)
       this.router.navigateByUrl("/layout/home")
     }
     else{
