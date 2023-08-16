@@ -36,7 +36,9 @@
               "src/assets/css/gijgo.css",
               "src/assets/css/animate.css",
               "src/assets/css/slicknav.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-square-spin.css"
             ],
             "scripts": [
               "src/assets/js/vendor/modernizr-3.5.0.min.js",
