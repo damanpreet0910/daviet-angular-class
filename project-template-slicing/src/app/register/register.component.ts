@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomerService } from '../shared/customer/customer.service';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-register',
@@ -14,14 +17,34 @@ export class RegisterComponent implements OnInit{
     password:''
   }
 
-  constructor(private router : Router){}
+  constructor(private router : Router,private customerservice : CustomerService,private toastr : ToastrService,private spinner : NgxSpinnerService){}
 
   ngOnInit(): void {
     
   }
 
   reg(){
+    this.spinner.show()
     // console.log(this.registerform)
-    this.router.navigateByUrl("/layout/login")
+    this.customerservice.add(this.registerform).subscribe({
+      next:(result:any)=>{
+      this.spinner.hide()
+
+        // console.log(result)
+        if(result.success)
+        {
+          this.toastr.success(result.message)
+          this.router.navigateByUrl("/layout/login")
+        }
+        else{
+          this.toastr.error(result.message)
+        }
+      },
+      error:(err:any)=>{
+        // console.log(err)
+        this.spinner.hide()
+        this.toastr.error(err)
+      }
+    })
   }
 }

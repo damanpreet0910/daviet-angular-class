@@ -14,6 +14,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ToastrModule.forRoot({
       preventDuplicates: true,
     }),
-    NgxSpinnerModule.forRoot({ type: 'ball-square-spin' }) 
+    NgxSpinnerModule.forRoot({ type: 'ball-square-spin' }),
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
