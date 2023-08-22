@@ -7,25 +7,23 @@ export class AuthService {
 
   constructor() { }
 
-  setdata(formdata:any){
+  setdata(res:any){
     // console.log(formdata)
-    sessionStorage.setItem('email',formdata.email)
-    sessionStorage.setItem('usertype','customer')
+    localStorage.setItem('email',res.data.email)
+    localStorage.setItem('token',res.token)
   }
 
   getEmail()
   {
-    return sessionStorage.getItem("email")
+    return localStorage.getItem("email")
   }
 
-  getUserType()
+  getToken()
   {
-    return sessionStorage.getItem("usertype")
+    return localStorage.getItem("token")
   }
 
   removedata(){
-    // sessionStorage.removeItem("email");
-    // sessionStorage.removeItem("usertype");
-    sessionStorage.clear();
+    localStorage.clear();
   }
 }

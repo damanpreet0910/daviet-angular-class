@@ -4,6 +4,7 @@ import { AuthService } from '../shared/auth/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { CustomerService } from '../shared/customer/customer.service';
 
 @Component({
   selector: 'app-login',
@@ -14,34 +15,34 @@ export class LoginComponent implements OnInit{
 
   loginform = new FormGroup({
     email: new FormControl('',[Validators.required,Validators.email]),
-    password: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(1)]),
   })
 
-  constructor(private router : Router,private authservice : AuthService,private toastr : ToastrService,private spinner : NgxSpinnerService){}
+  constructor(private router : Router,private authservice : AuthService,private toastr : ToastrService,private spinner : NgxSpinnerService,private customerservice : CustomerService){}
 
   ngOnInit(): void {
     
   }
 
   submit(){
-    this.spinner.show()
-    // console.log(this.loginform.value)
-    if(this.loginform.value.email == "daman@gmail.com" && this.loginform.value.password == "123456")
-    {
-      setTimeout(() => {
-        this.spinner.hide()
-      }, 3000);
-      this.toastr.success("Login Successfully","wow!")
-      // alert("Login Successfully")
-      this.authservice.setdata(this.loginform.value)
-      this.router.navigateByUrl("/layout/home")
-    }
-    else{
-      setTimeout(() => {
-        this.spinner.hide()
-      }, 3000);
-      this.toastr.error("Invalid email or password","oops!")
-    }
+    // this.spinner.show()
+    this.customerservice.login(this.loginform.value).subscribe({
+      next:(res:any)=>{
+        // console.log(res.success)
+        if(res.success)
+        {
+          this.authservice.setdata(res)
+          this.toastr.success(res.message)
+          this.router.navigateByUrl("/layout/about")
+        }
+        else{
+          this.toastr.error(res.message)
+        }
+      },
+      error:(err:any)=>{
+        this.toastr.error(err)
+      }
+    })
   }
 
 }

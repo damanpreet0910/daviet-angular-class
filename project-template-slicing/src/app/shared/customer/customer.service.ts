@@ -15,6 +15,10 @@ export class CustomerService {
   add(form:any){
     return this.http.post(this.baseurl+"user/add",form)
   }
+
+  login(form:any){
+    return this.http.post(this.baseurl+"user/login",form)
+  }
   
 
 }

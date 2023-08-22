@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
     constructor(private authservice : AuthService,private router : Router){}
 
     canActivate():boolean{
-        if(this.authservice.getEmail() == null)
+        if(this.authservice.getToken() == null)
         {
             this.router.navigateByUrl("/layout/login")
             return  false;
