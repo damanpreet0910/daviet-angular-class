@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './authguard/auth.guard';
+import { ManageCustomerComponent } from './customer/manage-customer/manage-customer.component';
+import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,12 @@ const routes: Routes = [
       },
       {
         path:'register',component : RegisterComponent
+      },
+      {
+        path:'manage-customer',component:ManageCustomerComponent,canActivate:[AuthGuard]
+      },
+      {
+        path:'single-customer/:_id',component:SingleCustomerComponent,canActivate:[AuthGuard]
       }
     ]
   }

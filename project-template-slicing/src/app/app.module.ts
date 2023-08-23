@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from "@angular/common/http";
+import { ManageCustomerComponent } from './customer/manage-customer/manage-customer.component';
+import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     AboutComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ManageCustomerComponent,
+    SingleCustomerComponent
   ],
   imports: [
     BrowserModule,
