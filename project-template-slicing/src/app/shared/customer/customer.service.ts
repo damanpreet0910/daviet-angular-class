@@ -33,5 +33,11 @@ export class CustomerService {
     return this.http.post(this.baseurl+"user/single",form,{headers : header_object})
   }
 
+  update(form:any){
+    var header_object = new HttpHeaders().set('Authorization',this.token)
+    // console.log(form)
+    return this.http.post(this.baseurl+"user/update",form,{headers : header_object})
+  }
+
 
 }

@@ -17,6 +17,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from "@angular/common/http";
 import { ManageCustomerComponent } from './customer/manage-customer/manage-customer.component';
 import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SingleCustomerComponent } from './customer/single-customer/single-custo
     RegisterComponent,
     LoginComponent,
     ManageCustomerComponent,
-    SingleCustomerComponent
+    SingleCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
