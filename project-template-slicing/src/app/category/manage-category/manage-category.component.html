@@ -1,0 +1,41 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img src='https://i.kym-cdn.com/photos/images/newsfeed/001/877/794/e3a.gif' />"
+>
+</ngx-spinner>
+
+<!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg overlay2">
+    <h3>Manage Customer</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!-- about_area_start -->
+<div class="about_area">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 mx-auto">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let customer of alldata;let i=index;">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.image }}</td>
+                    <td>{{ customer.status }}</td>
+                    <td>
+                        <i class="fa fa-times text-danger" *ngIf="customer.status" (click)="changestatus(customer._id,false)">Block</i>
+                        <i class="fa fa-check text-success" *ngIf="!customer.status" (click)="changestatus(customer._id,true)">Unblock</i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<!-- about_area_end -->

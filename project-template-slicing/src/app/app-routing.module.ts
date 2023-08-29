@@ -9,6 +9,7 @@ import { AuthGuard } from './authguard/auth.guard';
 import { ManageCustomerComponent } from './customer/manage-customer/manage-customer.component';
 import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
+import { ManageCategoryComponent } from './category/manage-category/manage-category.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,9 @@ const routes: Routes = [
       },
       {
         path:'update-customer/:_id',component:UpdateCustomerComponent,canActivate:[AuthGuard]
+      },
+      {
+        path:'manage-category',component:ManageCategoryComponent,canActivate:[AuthGuard]
       }
     ]
   }

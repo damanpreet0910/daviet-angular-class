@@ -35,7 +35,7 @@ export class UpdateCustomerComponent implements OnInit{
         this.registerform.patchValue({name:result.data.name})
         this.registerform.patchValue({email:result.data.email})
         // this.singleuser = result.data
-        // console.log(result.data)
+        console.log(result.data)
       },
       error:(err:any)=>{
         this.spinner.hide()

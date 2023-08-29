@@ -18,6 +18,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ManageCustomerComponent } from './customer/manage-customer/manage-customer.component';
 import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
+import { ManageCategoryComponent } from './category/manage-category/manage-category.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UpdateCustomerComponent } from './customer/update-customer/update-custo
     LoginComponent,
     ManageCustomerComponent,
     SingleCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    ManageCategoryComponent
   ],
   imports: [
     BrowserModule,
