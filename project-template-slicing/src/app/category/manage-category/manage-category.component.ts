@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CategoryService } from 'src/app/shared/category/category.service';
 import Swal from 'sweetalert2'
@@ -9,10 +10,18 @@ import Swal from 'sweetalert2'
   styleUrls: ['./manage-category.component.css']
 })
 export class ManageCategoryComponent implements OnInit {
-  constructor(private categorservice: CategoryService, private spinner: NgxSpinnerService) { }
+  imgurl : any
+  constructor(private categorservice: CategoryService, private spinner: NgxSpinnerService,private dom : DomSanitizer,@Inject("imageurl") _imageurl:any) { 
+    this.imgurl = _imageurl
+  }
 
   ngOnInit(): void {
     this.getalldata()
+    // console.log(this.imgurl)
+  }
+
+  combineurl(imagepath : any){
+    return this.dom.bypassSecurityTrustResourceUrl(this.imgurl+imagepath)
   }
 
   alldata: any

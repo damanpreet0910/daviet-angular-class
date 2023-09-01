@@ -19,6 +19,7 @@ import { ManageCustomerComponent } from './customer/manage-customer/manage-custo
 import { SingleCustomerComponent } from './customer/single-customer/single-customer.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { ManageCategoryComponent } from './category/manage-category/manage-category.component';
+import { AddCategoryComponent } from './category/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ManageCategoryComponent } from './category/manage-category/manage-categ
     ManageCustomerComponent,
     SingleCustomerComponent,
     UpdateCustomerComponent,
-    ManageCategoryComponent
+    ManageCategoryComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

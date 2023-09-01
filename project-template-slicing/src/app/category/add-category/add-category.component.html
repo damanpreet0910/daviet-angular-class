@@ -1,0 +1,33 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img src='https://i.kym-cdn.com/photos/images/newsfeed/001/877/794/e3a.gif' />"
+>
+</ngx-spinner>
+
+<!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg overlay2">
+    <h3>Add Category</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!-- our_team_member_start -->
+<div class="our_team_member">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-md-6 col-lg-3 mx-auto">
+            <form [formGroup]="categoryform" (submit)="submit()">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" formControlName="name" required="">
+                </div>
+                <div class="form-group">
+                    <label for="">Image</label>
+                    <input type="file" class="form-control" (change)="upload($event)" required="">
+                </div>
+              <button type="submit" class="btn btn-primary mx-auto d-block">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- our_team_member_end -->

@@ -14,6 +14,11 @@ export class CategoryService {
     this.baseurl = _baseurl
     this.token = this.authservice.getToken()
   }
+  
+  add(form:any){
+    var header_object = new HttpHeaders().set('Authorization',this.token)
+    return this.http.post(this.baseurl+"category/add",form,{headers : header_object})
+  }
 
   getall(form:any){
     var header_object = new HttpHeaders().set('Authorization',this.token)
